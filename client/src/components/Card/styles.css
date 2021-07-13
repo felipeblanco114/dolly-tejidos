@@ -1,0 +1,122 @@
+@import url('http://fonts.cdnfonts.com/css/athene');
+@import url('http://fonts.cdnfonts.com/css/print-clearly');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+.container-cards {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(245, 245, 245);
+    margin-top: 10rem;
+    justify-content: center;
+}
+.container-card {
+    max-width: 18rem;
+    margin: 1.5rem;
+    background-color: rgb(250, 250, 250);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(53, 53, 53);
+    padding: 1rem;
+    transition: 0.4s;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02), 
+              0 2px 2px rgba(0,0,0,0.02), 
+              0 4px 4px rgba(0,0,0,0.02), 
+              0 8px 8px rgba(0,0,0,0.02),
+              0 16px 16px rgba(0,0,0,0.02);
+}
+.container-card:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.06), 
+              0 2px 2px rgba(0,0,0,0.06), 
+              0 4px 4px rgba(0,0,0,0.06), 
+              0 8px 8px rgba(0,0,0,0.06),
+              0 16px 16px rgba(0,0,0,0.06);
+}
+.container-card h2 {
+    font-weight: 700;
+}
+
+.container-card h4 {
+    font-weight: 400;
+    padding-bottom: .5rem;
+    margin-top: -0.2rem;
+}
+
+.container-cards img {
+    max-width: 16rem;
+}
+.retroceder {
+    position: relative;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(53, 53, 53);
+}
+.next {
+    position: relative;
+    margin-left: 13rem;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgb(53, 53, 53);
+}
+.card-details {
+    margin-top: .4rem;
+    width: 100%;
+    font-size: .85rem;
+    
+}
+.card-details h2 {
+    font-size: 2rem;
+}
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container-card button {
+    font-family: 'Poppins', sans-serif;
+    padding: .3rem;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    letter-spacing: .1rem;
+    justify-self: center;
+    margin-top: .5rem;
+}
+.card-footer .sizes {
+    display: flex;
+    padding-left: 5rem;
+    flex-direction: column;
+    font-size: .7rem;
+    justify-content: space-between;
+    border-left:rgb(161, 161, 161) solid 1px;
+}
+.card-footer .sizes span {
+    font-weight: bold;
+}
+.card-footer .sizes div {
+    display: flex;
+    justify-content: flex-end;
+}
+.card-footer .price {
+    justify-self: center;
+    font-weight: bold;
+}
+.card-footer {
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(161, 161, 161);
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
