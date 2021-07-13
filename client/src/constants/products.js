@@ -1,6 +1,6 @@
 export const products = [
     {
-        title: 'Sweater',
+        title: 'Sweater Gucci',
         description: 'Sweater azul y amarillo especial para la primavera.',
         talle: 38,
         alto: '60cm',
