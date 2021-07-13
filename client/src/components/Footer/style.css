@@ -49,4 +49,7 @@ footer {
     .footer-container {
         margin-bottom: 2rem;
     }
+    footer img {
+        margin-bottom: 2rem;
+    }
   }

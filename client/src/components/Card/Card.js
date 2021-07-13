@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import './styles.css';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-const Card = ({ images, id, title, category, description, price, talle, alto, ancho }) => {
+const Card = ({ images, id, title, category, description, price, talle, alto, ancho, stock }) => {
 
     const [image, setImage] = useState(0);
 
@@ -23,6 +24,7 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
     }
     return (
         <div className='container-card' key={id}>
+            { !stock ? <div className='stock'>SIN STOCK </div> : null }
             <h2>{title}</h2>
             <h4 style={{ color: 'rgb(140,140,140)' }}>{category.toUpperCase()}</h4>
             <img src={images[image]} alt='product' />
@@ -39,7 +41,7 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
                     <div><span>Ancho: </span>{ancho}</div>
                 </div>
             </div>
-            <button>COMPRAR</button>
+            <button disabled={!stock}><ShoppingCartIcon style={{ maxWidth: '1rem', float: 'left', marginLeft: '.5rem' }} /> <span>COMPRAR</span></button>
         </div>
     )
 }

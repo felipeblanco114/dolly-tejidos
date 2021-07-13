@@ -7,10 +7,10 @@ const Cards = () => {
 
     return (
         <div className='container-cards'>
-            {products.map(({ id, images, title, description, category, price, talle, alto, ancho }) => (
+            {products.map(({ id, images, title, description, category, price, talle, alto, ancho, stock }) => (
                 <Card   images={images} title={title} description={description} 
                         category={category} key={id} price={price} talle={talle} 
-                        alto={alto} ancho={ancho} 
+                        alto={alto} ancho={ancho} stock={stock}
                 />
             ))}
         </div>
