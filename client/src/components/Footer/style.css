@@ -42,9 +42,19 @@ footer {
     user-select: none;
     /* font-family: 'Halimun', sans-serif; */
 }
-.footer-container div span:hover {
-    border-bottom: solid .1px rgba(124, 124, 124, 0.24);
+.footer-container div:hover span {
+    color: rgb(250, 123, 50);
 }
+.footer-container div:hover {
+    color: rgb(250, 123, 50);
+}
+.footer-container div:hover a {
+    color: rgb(250, 123, 50);
+}
+.footer-container div {
+    width: 14rem;
+}
+
 @media (max-width: 600px) {
     .footer-container {
         margin-bottom: 2rem;

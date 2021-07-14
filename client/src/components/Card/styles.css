@@ -138,3 +138,8 @@
     color: rgb(245,245,245);
     background-color: rgb(53, 53, 53);
 }
+@media (max-width: 600px) {
+    .container-cards {
+      margin-top: 1rem;
+    }
+  }
