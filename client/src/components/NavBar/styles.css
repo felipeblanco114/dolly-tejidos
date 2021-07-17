@@ -59,7 +59,7 @@
     transition: 0.1s;
 }
 .navbar ul li a:hover {
-    border-bottom: 2.4px solid rgb(250, 123, 50);
+    /* border-bottom: 2.4px solid rgb(250, 123, 50); */
     color: rgb(250, 123, 50);
     transition: .15s;
 }
@@ -85,5 +85,8 @@
     .navbar ul li {
         font-size: .8rem;
         text-align: center;
+    }
+    .navbar ul li a {
+        letter-spacing: 1px;
     }
   }

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Cards from './components/Card/Cards';
@@ -7,6 +6,7 @@ import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
+
   return (
     <Router>
       <div>
