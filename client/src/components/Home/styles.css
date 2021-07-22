@@ -72,6 +72,9 @@
     z-index: 1;
     border-radius: .1rem;
 }
+.image-gallery .image-box .grande::before {
+    filter: blur(2px);
+}
 .image-gallery .image-box .overlay {
     position: absolute;
     top: 0;

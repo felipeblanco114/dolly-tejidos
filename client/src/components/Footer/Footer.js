@@ -4,6 +4,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import logo from '../NavBar/oveja.png';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import pago from '../Home/img/medios-de-pago.png';
 
 import './style.css';
 
@@ -29,13 +30,17 @@ const Footer = () => {
                     <div>
                         <a href='mailto:felipeblanco114@gmail.com'>
                             <AlternateEmailIcon style={{ marginTop: '.5rem' }} />
-                            <span style={{ paddingBottom: '.5rem' }}>felipeblanco114@gmail.com</span>
+                            <span style={{ paddingBottom: '.5rem' }}>dolly-tejidos@gmail.com</span>
                         </a>
                     </div>
-                    {/* <div>
+                    <div>
                         <LocationOnIcon style={{ marginTop: '.5rem' }} />
-                        <span style={{ paddingBottom: '.5rem' }} >Urquiza 245, Coronel Suárez</span>
-                    </div> */}
+                        <span style={{ paddingBottom: '.5rem' }} >Coronel Suárez, Buenos Aires</span>
+                    </div> 
+                </div>
+                <div>
+                    <h2>MEDIOS DE PAGO</h2>
+                    <img src={pago} alt='medios-de-pago' />
                 </div>
             </div>
             <img src={logo} style={{ maxWidth: '2rem', marginRight: '3rem' }} alt='logo' />

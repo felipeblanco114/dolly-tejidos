@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import './styles.css';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-const Card = ({ images, id, title, category, description, price, talle, alto, ancho, stock }) => {
+const Card = ({ images, id, title, category, description, price, talle, alto, ancho, stock, cart, addToCart }) => {
 
     const [image, setImage] = useState(0);
 
@@ -22,6 +22,7 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
             setImage(image - 1);
         }
     }
+    const imageCart = images[0];
     return (
         <div className='container-card' key={id}>
             { !stock ? <div className='stock'>SIN STOCK </div> : <div className='c-stock'>STOCK ÚNICO</div> }
@@ -41,7 +42,9 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
                     <div><span>Ancho: </span>{ancho}</div>
                 </div>
             </div>
-            <button disabled={!stock}><ShoppingCartIcon style={{ maxWidth: '1rem', float: 'left', marginLeft: '.5rem' }} /> <span>COMPRAR</span></button>
+            <button onClick={() => addToCart({imageCart, title, price, id })} disabled={!stock}><AddShoppingCartIcon style={{ maxWidth: '1rem', float: 'left', marginLeft: '.5rem' }} /> 
+                <span>AGREGAR AL CARRITO</span>
+            </button>
         </div>
     )
 }

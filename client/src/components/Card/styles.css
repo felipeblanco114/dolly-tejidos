@@ -14,7 +14,7 @@
     justify-content: center;
 }
 .container-card {
-    max-width: 18rem;
+    max-width: 20rem;
     margin: 1.5rem;
     background-color: rgb(250, 250, 250);
     font-family: 'Poppins', sans-serif;
@@ -47,7 +47,7 @@
 }
 
 .container-cards img {
-    max-width: 16rem;
+    max-width: 18rem;
 }
 .sin-stock {
     opacity: 0.7;
@@ -62,7 +62,7 @@
 }
 .next {
     position: relative;
-    margin-left: 13rem;
+    margin-left: 15rem;
     text-decoration: none;
     border: none;
     font-weight: bold;
@@ -116,7 +116,8 @@
     transition: .2s;
 }
 .container-card button span {
-    margin-left: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-footer .sizes {
@@ -169,8 +170,173 @@
     color: rgb(53, 53, 53);
     background-color: rgb(245,245,245);
 }
+.shop-cart {
+    position: fixed;
+    z-index: 100000;
+    left: 20rem;
+    top: 3.5rem;
+    color: rgb(53,53,53);
+    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+.number-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    border-radius: 10rem;
+    background-color: rgb(250, 123, 50);
+    color: #ffff;
+    width: 1rem;
+    text-align:center;
+    font-size: 0.7rem;
+    height: 1rem;
+}
+.number-cart span {
+    margin-top: -.1rem;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(20, 25, 22, 0.9);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .5s ease;
+    width: 100%;
+    height: 100%;
+    z-index: 10000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container {
+    padding: 2rem;
+    width: 30rem;
+    height: 90vh;
+    margin: auto;
+    background: rgb(245,245,245);
+    background-image: url('https://images.unsplash.com/photo-1597624543234-d14e45b22112?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=370&q=80');
+    background-size: cover;
+    transition: all .5s ease;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15),
+              0 16px 16px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+.modal-container h2 {
+    align-self: center;
+    font-size: 2rem;
+}
+.cart-item {
+    width: 95%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255,255,255, 0.7);
+    margin-top: 1rem;
+    margin-bottom: .3rem;
+}
+.cart-item:hover {
+    background-color: rgb(255,255,255, 0.9);
+    transition: all .4s ease;
+}
+.cart-item h3 {
+    margin-left: -.3rem;
+    font-size: 1.5rem;
+}
+.cart-item span {
+    position: relative;
+    font-weight: bold;
+    padding: 1rem;
+    border: 1px rgb(200,200,200) solid;
+    background-color: rgba(253, 253, 253, 0.7);
+    right: 0px;
+}
+.cart-item img {
+    max-height: 4rem;
+}
+.items-container {
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height:80%;
+    margin-bottom: .8rem;
+}
+.cart-footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: auto;
+    background-color: rgb(250,250,250, 0.6);
+    height: 3rem;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    transition: all .2s;
+    cursor: pointer;
+}
+.cart-footer:hover {
+    background-color: rgb(250,250,250);
+}
+.cart-footer div h3 {
+    border: .1px solid rgb(200,200,200);
+    padding: .35rem;
+}
+.cart-shopping div {
+    display: none;
+}
+.cart-shopping:hover div {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    border: .1px solid rgb(180,180,180);
+    justify-content: center;
+    text-align: left;
+    font-family: 'Poppins', 'sans-serif';
+    padding: .1rem;
+    background-color: rgb(245,245,245);
+    margin-left: -2.5rem;
+}
+.cart-shopping:hover div span {
+    align-self: center;
+}
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
 @media (max-width: 600px) {
     .container-cards {
       margin-top: 1rem;
+    }
+    .cart-shopping:hover div {
+        display: none;
     }
   }
