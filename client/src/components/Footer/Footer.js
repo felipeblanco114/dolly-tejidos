@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <footer>
             <div className='footer-container'>
-                <div>
+                <div className='footer-div'>
                     <h2>REDES SOCIALES</h2>
                     <div>
                         <a rel='noreferrer' target='_blank' href='https://www.instagram.com/dolly.slowfashion/'>
@@ -21,7 +21,7 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div>
+                <div className='footer-div'>
                     <h2>CONTACTO</h2>
                     <div>
                         <WhatsAppIcon style={{ marginTop: '.5rem' }} />
@@ -38,7 +38,7 @@ const Footer = () => {
                         <span style={{ paddingBottom: '.5rem' }} >Coronel Suárez, Buenos Aires</span>
                     </div> 
                 </div>
-                <div>
+                <div className='footer-div'>
                     <h2>MEDIOS DE PAGO</h2>
                     <img src={pago} alt='medios-de-pago' />
                 </div>

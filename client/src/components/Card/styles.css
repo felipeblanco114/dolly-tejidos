@@ -2,25 +2,38 @@
 @import url('http://fonts.cdnfonts.com/css/print-clearly');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
 
-.container-cards {
+.container-cards-categories {
     width: 90%;
+    margin-top: 10rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    color: rgb(53, 53, 53);
+}
+.container-cards {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(245, 245, 245);
-    margin-top: 10rem;
     justify-content: center;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02), 
+                0 2px 2px rgba(0,0,0,0.02), 
+                0 4px 4px rgba(0,0,0,0.02), 
+                0 8px 8px rgba(0,0,0,0.02),
+                0 16px 16px rgba(0,0,0,0.02);
 }
 .container-card {
     max-width: 20rem;
-    margin: 1.5rem;
-    background-color: rgb(250, 250, 250);
+    margin: 1.2rem;
+    background-color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;
     color: rgb(53, 53, 53);
     padding: 1rem;
-    transition: 0.4s;
+    transition: 0.2s;
     box-shadow: 0 1px 1px rgba(0,0,0,0.02), 
               0 2px 2px rgba(0,0,0,0.02), 
               0 4px 4px rgba(0,0,0,0.02), 
@@ -33,7 +46,7 @@
               0 4px 4px rgba(0,0,0,0.06), 
               0 8px 8px rgba(0,0,0,0.06),
               0 16px 16px rgba(0,0,0,0.06);
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 .container-card h2 {
     font-weight: 700;
@@ -46,14 +59,49 @@
     margin-top: -0.2rem;
 }
 
-.container-cards img {
-    max-width: 18rem;
+.container-image {
+    width: 18rem;
+    height: 22rem;
 }
+.container-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.categories {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    max-width: 100%;
+}
+::-webkit-scrollbar {
+    height: 4px;
+  }
+.categories h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+            user-select: none;
+}
+.selected {
+    color:rgb(250, 123, 50);
+    border-bottom: 3px rgb(250,123,50) solid;
+}
+
 .sin-stock {
-    opacity: 0.7;
+    opacity: .95;
+    filter: grayscale(100%);
+}
+.arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: -12rem;
 }
 .retroceder {
-    position: relative;
     text-decoration: none;
     border: none;
     font-weight: bold;
@@ -61,14 +109,13 @@
     color: rgb(53, 53, 53);
 }
 .next {
-    position: relative;
-    margin-left: 15rem;
     text-decoration: none;
     border: none;
     font-weight: bold;
     cursor: pointer;
     background-color: transparent;
     color: rgb(53, 53, 53);
+    margin-right: -.2rem;
 }
 .card-details {
     margin-top: .4rem;
@@ -107,9 +154,9 @@
     width: 100%;
     letter-spacing: .1rem;
     justify-self: center;
-    margin-top: .5rem;
     display: flex;
     align-items: center;
+    margin-top: .5rem;
 }
 .container-card button:hover {
     background-color: rgb(230,230,230);
@@ -174,7 +221,7 @@
     position: fixed;
     z-index: 100000;
     left: 20rem;
-    top: 3.5rem;
+    top: 2.5rem;
     color: rgb(53,53,53);
     cursor: pointer;
     width: 1.8rem;
@@ -267,7 +314,7 @@
     max-height: 4rem;
 }
 .items-container {
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -331,12 +378,48 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+  .close-modal {
+    cursor: pointer; 
+    position: relative; 
+    left: 25rem; 
+    display: inline; 
+    top: -1rem;
+  }
 
 @media (max-width: 600px) {
+    .container-cards-categories {
+        margin-top: 1rem;
+    }
+    .container-card {
+        margin: .4rem;
+    }
+    .categories {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .categories h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+                user-select: none;
+    }
     .container-cards {
       margin-top: 1rem;
+    }
+    .cart-shopping {
+        display: fixed;
     }
     .cart-shopping:hover div {
         display: none;
     }
+    .close-modal {
+        left: 19rem;
+        top: -1rem;
+    }
+    ::-webkit-scrollbar {
+        height: 1px;
+      }
   }

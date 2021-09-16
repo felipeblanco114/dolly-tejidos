@@ -11,6 +11,8 @@ const Cards = () => {
     const [cart, setCart] = useState([]);
     console.log(cart);
 
+    const [ categorySelected, setCategorySelected ] = useState('');
+
     const [showCart, setShowCart] = useState(false);
     console.log(showCart);
 
@@ -25,6 +27,8 @@ const Cards = () => {
         }
     
     }
+
+    const filterCards = products.filter((product) => product.category === categorySelected);
 
     const removeToCart = (product) => {
         const exist = cart.find((x) => x.id === product.id);
@@ -42,11 +46,15 @@ const Cards = () => {
         }
     }
 
+    const handleSetCategory = (category) => {
+        setCategorySelected(category);
+    }
+
     const Modal = () => {
         return (
             <div className='modal'>
                 <div className='modal-container'>
-                <CloseIcon onClick={(e) => handleShowCart(e)} style={{ cursor: 'pointer', position: 'relative', left: '25rem', display: 'inline', top: '-1rem' }} />
+                <CloseIcon onClick={(e) => handleShowCart(e)} className='close-modal' />
                     <div style={{ height: '10%', textAlign: 'center' }}><h2> <ShoppingCartIcon /> {cart.length ? 'Carrito' : 'Carrito vacío ☹️'}</h2></div>
                     <div className='items-container'>
                         { cart.length ? cart.map((cartItem) => (
@@ -74,27 +82,42 @@ const Cards = () => {
     }
 
     return (
-        <div className='container-cards'>
-            <div className='shop-cart' onClick={(e) => handleShowCart(e)}>
-                {cart.length ? (<div className='number-cart'><span>{cart.length}</span></div>) : null}
-                <div className='cart-shopping'> 
-                <ShoppingCartIcon />
-                {cart.length ? (
-                    <div>
-                        {cart.map((item) => (
-                            <h6 style={{ borderBottom: 'solid .1px rgb(200,200,200)' }}>{item.title}</h6>
-                        ))} 
-                        <span>${itemPrice}</span>
-                    </div>) : null }
-                </div>
+        <div className='container-cards-categories'>
+            <div className='categories'>
+                <h3 className={categorySelected === '' ? 'selected' : ''} onClick={() => handleSetCategory('')}>TODO</h3>
+                <h3 className={categorySelected === 'Accesorios' ? 'selected' : ''} onClick={() => handleSetCategory('Accesorios')}>ACCESORIOS</h3>
+                <h3 className={categorySelected === 'Sweaters' ? 'selected' : ''} onClick={() => handleSetCategory('Sweaters')}>SWEATERS</h3>
+                <h3 className={categorySelected === 'Pantalones' ? 'selected' : ''} onClick={() => handleSetCategory('Pantalones')}>PANTALONES</h3>
             </div>
-            { showCart ? <Modal /> : null }
-            {products.map(({ id, images, title, description, category, price, talle, alto, ancho, stock }) => (
-                <Card   images={images} title={title} description={description} 
-                        category={category} key={id} price={price} talle={talle} 
-                        alto={alto} ancho={ancho} stock={stock} cart={cart} addToCart={addToCart} id={id}
-                />
-            ))}
+            <div className='container-cards'>
+                <div className='shop-cart' onClick={(e) => handleShowCart(e)}>
+                    {cart.length ? (<div className='number-cart'><span>{cart.length}</span></div>) : null}
+                    <div className='cart-shopping'> 
+                    <ShoppingCartIcon />
+                    {cart.length ? (
+                        <div>
+                            {cart.map((item) => (
+                                <h6 key={item.id} style={{ borderBottom: 'solid .1px rgb(200,200,200)' }}>{item.title}</h6>
+                            ))} 
+                            <span>${itemPrice}</span>
+                        </div>) : null }
+                    </div>
+                </div>
+                { showCart ? <Modal /> : null }
+                { categorySelected === '' ? 
+                products.map((product) => (
+                    <Card   images={product.images} title={product.title} description={product.description} 
+                            category={product.category} price={product.price} talle={product.talle} key={product.id}
+                            alto={product.alto} ancho={product.ancho} stock={product.stock} cart={cart} addToCart={addToCart} id={product.id}
+                    />
+                )) :
+                filterCards.map((product) => (
+                    <Card   images={product.images} title={product.title} description={product.description} 
+                            category={product.category} price={product.price} talle={product.talle} key={product.id}
+                            alto={product.alto} ancho={product.ancho} stock={product.stock} cart={cart} addToCart={addToCart} id={product.id}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

@@ -67,15 +67,19 @@ footer {
     width: 14rem;
 }
 
-
 @media (max-width: 600px) {
     footer {
         height: 100%;
+    }
+    .footer-div {
+        margin-bottom: 2rem;
+        margin-left: 1rem;
     }
     .footer-container {
         margin-bottom: 2rem;
         flex-direction: column;
         height: 100%;
+        margin-top: 1rem;
     }
     footer img {
         margin-bottom: 2rem;

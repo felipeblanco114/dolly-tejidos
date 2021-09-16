@@ -22,15 +22,22 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
             setImage(image - 1);
         }
     }
+
     const imageCart = images[0];
     return (
-        <div className='container-card' key={id}>
-            { !stock ? <div className='stock'>SIN STOCK </div> : <div className='c-stock'>STOCK ÚNICO</div> }
+        <div className='container-card'>
+            { stock > 1 ? <div className='c-stock'>QUEDAN {stock}</div> : !stock ? <div className='stock'>SIN STOCK </div> : <div className='c-stock'>STOCK ÚNICO</div> }
             <h2>{title}</h2>
             <h4 style={{ color: 'rgb(140,140,140)' }}>{category.toUpperCase()}</h4>
-            <img src={images[image]} alt='product' className={!stock ? 'sin-stock' : ''} />
-            <ArrowBackIosIcon className='retroceder' onClick={handleBefore} disabled={image === 0} />
-            <ArrowForwardIosIcon className='next' onClick={handleNext} disabled={image === (images.length - 1)} />
+            <div className='container-image'>
+                <img src={images[image]} alt='product' className={!stock ? 'sin-stock' : ''} />
+                { images.length > 1 ? (
+                    <div className='arrows'>
+                    <ArrowBackIosIcon className='retroceder' onClick={handleBefore} disabled={image === 0} />
+                    <ArrowForwardIosIcon className='next' onClick={handleNext} disabled={image === (images.length - 1)} />
+                    </div> ) 
+                : null }
+            </div>
             <div className='card-details'>
                 <p>{description}</p>
             </div>

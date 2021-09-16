@@ -7,6 +7,7 @@
     font-weight: bold;
     font-size: 1.5rem;
     position: fixed;
+    height: 6rem;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,6 +17,10 @@
     transition: 0.4s;
     padding: 1.5rem 3rem;
     z-index: 100000;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(245,245,245,0.2) 100%);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 20px 30px rgb(210,210,210,0.15);
 }
 
 .navbar span {
@@ -24,13 +29,14 @@
     left: 7.5rem;
     user-select: none;
     transition: 0.15s;
+    font-size: 1.15rem;
 }
 .navbar span:hover {
     color: rgb(250, 123, 50);
 }
 
 .navbar img {
-    max-width: 3.5rem;
+    max-width: 2.5rem;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: 0.15s;
@@ -57,6 +63,8 @@
     color: rgb(50,50,50);
     letter-spacing: 2px;
     transition: 0.1s;
+    font-size: 1rem;
+    font-weight: 500;
 }
 .navbar ul li a:hover {
     /* border-bottom: 2.4px solid rgb(250, 123, 50); */
@@ -68,6 +76,7 @@
       display: flex;
       flex-direction: column;
       position: static;
+      height: 100%;
     }
     .navbar ul li a:hover {
         border-bottom: none;
@@ -75,7 +84,7 @@
         transition: .15s;
     }
     .navbar span {
-        left: 8.5rem;
+        left: 9.5rem;
         top: 3rem;
     }
     .navbar ul {
@@ -88,5 +97,6 @@
     }
     .navbar ul li a {
         letter-spacing: 1px;
+        font-size: .83rem;
     }
   }

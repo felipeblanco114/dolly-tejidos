@@ -16,7 +16,7 @@ import img12 from './img/dolly-12.jpg';
 const Home = () => {
     return (
         <div className='home-container'>
-            <h2>¡Bienvenido a <span>Dolly</span>!</h2>
+            <h2>¡BIENVENIDO A <span>Dolly</span>!</h2>
             <div className='image-gallery'>
                 <div id='img-grande2' className='image-box'>
                     <img className='img-grande' src={img1} alt='sweater-dolly' />
