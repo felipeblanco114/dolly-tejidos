@@ -26,7 +26,7 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
     const imageCart = images[0];
     return (
         <div className='container-card'>
-            { stock > 1 ? <div className='c-stock'>QUEDAN {stock}</div> : !stock ? <div className='stock'>SIN STOCK </div> : <div className='c-stock'>STOCK ÚNICO</div> }
+            { stock > 1 ? null : !stock ? <div className='stock'>SIN STOCK </div> : <div className='c-stock'>STOCK ÚNICO</div> }
             <h2>{title}</h2>
             <h4 style={{ color: 'rgb(140,140,140)' }}>{category.toUpperCase()}</h4>
             <div className='container-image'>

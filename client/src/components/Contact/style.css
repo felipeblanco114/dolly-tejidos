@@ -44,6 +44,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('./background-contact.jpg');
+    background-size: cover;
 }
 .contact-right h3 {
     padding-bottom: 10px;

@@ -47,7 +47,7 @@ footer {
 }
 .footer-container div img {
     margin-top: .8rem;
-    max-width: 16rem;
+    max-width: 85%;
     filter: grayscale(70%);
 }
 .footer-container div img:hover {

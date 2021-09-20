@@ -13,7 +13,7 @@ const NavBar = () => {
             <span onClick={ () => history.push('/')} style={{  cursor: 'pointer' }}>Dolly</span>
             <nav>
                 <ul>
-                    <li><a href='#' >SOBRE DOLLY</a></li>
+                    <li><a href='#' >DOLLY</a></li>
                     <li><Link to='/products' >PRODUCTOS</Link></li>
                     <li><Link to='/contact' >CONTACTO</Link></li>
                 </ul>

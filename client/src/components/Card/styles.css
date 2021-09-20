@@ -18,7 +18,9 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
+    background-image: url('./background-cards.jpg');
+    background-size: cover;
     justify-content: center;
     box-shadow: 0 1px 1px rgba(0,0,0,0.02), 
                 0 2px 2px rgba(0,0,0,0.02), 
@@ -47,6 +49,10 @@
               0 8px 8px rgba(0,0,0,0.06),
               0 16px 16px rgba(0,0,0,0.06);
     transform: scale(1.01);
+}
+.container-card:hover img {
+    transition: 0.2s;
+    filter: grayscale(0%);
 }
 .container-card h2 {
     font-weight: 700;
@@ -389,6 +395,11 @@
 @media (max-width: 600px) {
     .container-cards-categories {
         margin-top: 1rem;
+        width: 95%;
+    }
+    .container-cards {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
     .container-card {
         margin: .4rem;

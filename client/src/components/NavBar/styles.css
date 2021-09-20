@@ -26,7 +26,7 @@
 .navbar span {
     font-family: 'Halimun', sans-serif;
     position: absolute;
-    left: 7.5rem;
+    left: 6.7rem;
     user-select: none;
     transition: 0.15s;
     font-size: 1.15rem;
@@ -83,9 +83,14 @@
         color: rgb(50, 50, 50);
         transition: .15s;
     }
+    .navbar img { 
+        position: absolute;
+        left: 1.4rem;
+    }
     .navbar span {
-        left: 9.5rem;
-        top: 3rem;
+        left: 4.4rem;
+        top: 2.4rem;
+        font-size: 1rem;
     }
     .navbar ul {
         width: 100vw;
@@ -98,5 +103,14 @@
     .navbar ul li a {
         letter-spacing: 1px;
         font-size: .83rem;
+    }
+    .navbar nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3.4rem;
     }
   }

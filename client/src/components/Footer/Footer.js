@@ -5,6 +5,7 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import logo from '../NavBar/oveja.png';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import pago from '../Home/img/medios-de-pago.png';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import './style.css';
 
@@ -41,6 +42,15 @@ const Footer = () => {
                 <div className='footer-div'>
                     <h2>MEDIOS DE PAGO</h2>
                     <img src={pago} alt='medios-de-pago' />
+                </div>
+                <div className='footer-div'>
+                    <h2>© 2021</h2>
+                    <div>
+                        <a rel='noreferrer' target='_blank' href='https://portfolio-fbm.vercel.app/'>
+                            <AccountCircle style={{ marginTop: '.5rem' }} />
+                            <span style={{ paddingBottom: '.5rem' }} >Felipe Blanco Muzzolón</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <img src={logo} style={{ maxWidth: '2rem', marginRight: '3rem' }} alt='logo' />
