@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import { products } from '../../constants/products';
+import { data } from '../../constants/products';
 import './styles.css';
 import Card from './Card';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -8,13 +8,14 @@ import CloseIcon from '@material-ui/icons/Close';
 
 const Cards = () => {
 
+    const { products } = data;
+
     const [cart, setCart] = useState([]);
     console.log(cart);
 
     const [ categorySelected, setCategorySelected ] = useState('');
 
     const [showCart, setShowCart] = useState(false);
-    console.log(showCart);
 
     const itemPrice = cart.reduce((a, c) => a + c.price, 0);
 
@@ -59,8 +60,11 @@ const Cards = () => {
                     <div className='items-container'>
                         { cart.length ? cart.map((cartItem) => (
                             <div key={cartItem.id} className='cart-item'>
-                                <img src={ cartItem?.imageCart} alt='cart-item' />
+                                <div className='cart-container-img'>
+                                    <img src={ cartItem?.imageCart} alt='cart-item' />
+                                </div>
                                 <h3>{cartItem?.title}</h3>
+                                
                                 <span>${cartItem?.price}</span>
                                 <DeleteIcon style={{ cursor: 'pointer', marginRight: '.5rem' }} onClick={() => removeToCart(cartItem)} />
                             </div>
@@ -108,13 +112,13 @@ const Cards = () => {
                 products.map((product) => (
                     <Card   images={product.images} title={product.title} description={product.description} 
                             category={product.category} price={product.price} talle={product.talle} key={product.id}
-                            alto={product.alto} ancho={product.ancho} stock={product.stock} cart={cart} addToCart={addToCart} id={product.id}
+                            alto={product.alto} ancho={product.ancho} stock={product.stock} quantity={product.quantity} cart={cart} addToCart={addToCart} id={product.id}
                     />
                 )) :
                 filterCards.map((product) => (
                     <Card   images={product.images} title={product.title} description={product.description} 
                             category={product.category} price={product.price} talle={product.talle} key={product.id}
-                            alto={product.alto} ancho={product.ancho} stock={product.stock} cart={cart} addToCart={addToCart} id={product.id}
+                            alto={product.alto} ancho={product.ancho} stock={product.stock} quantity={product.quantity} cart={cart} addToCart={addToCart} id={product.id}
                     />
                 ))}
             </div>

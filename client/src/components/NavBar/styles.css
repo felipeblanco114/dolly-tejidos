@@ -19,7 +19,7 @@
     z-index: 100000;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(245,245,245,0.2) 100%);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(.5px);
     box-shadow: 0 20px 30px rgb(210,210,210,0.15);
 }
 
@@ -31,10 +31,6 @@
     transition: 0.15s;
     font-size: 1.15rem;
 }
-.navbar span:hover {
-    color: rgb(250, 123, 50);
-}
-
 .navbar img {
     max-width: 2.5rem;
     -webkit-filter: grayscale(100%);

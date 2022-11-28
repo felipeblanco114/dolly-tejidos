@@ -59,6 +59,11 @@
     color: rgb(60,60,60);
 }
 
+.container-card:hover .container-image img {
+    transition: 0.2s;
+    transform: scale(1.08);
+}
+
 .container-card h4 {
     font-weight: 400;
     padding-bottom: .5rem;
@@ -68,6 +73,7 @@
 .container-image {
     width: 18rem;
     height: 22rem;
+    overflow: hidden;
 }
 .container-image img {
     height: 100%;
@@ -305,8 +311,8 @@
     transition: all .4s ease;
 }
 .cart-item h3 {
-    margin-left: -.3rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    margin-left: .3rem;
 }
 .cart-item span {
     position: relative;
@@ -315,9 +321,17 @@
     border: 1px rgb(200,200,200) solid;
     background-color: rgba(253, 253, 253, 0.7);
     right: 0px;
+    margin-left: auto;
 }
-.cart-item img {
-    max-height: 4rem;
+.cart-item .cart-container-img {
+    height: 4rem;
+    width: 4rem;
+}
+.cart-item .cart-container-img img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    
 }
 .items-container {
     overflow: auto;

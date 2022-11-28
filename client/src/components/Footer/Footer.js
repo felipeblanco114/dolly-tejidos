@@ -43,7 +43,7 @@ const Footer = () => {
                     <h2>MEDIOS DE PAGO</h2>
                     <img src={pago} alt='medios-de-pago' />
                 </div>
-                <div className='footer-div'>
+                {/* <div className='footer-div'>
                     <h2>© 2021</h2>
                     <div>
                         <a rel='noreferrer' target='_blank' href='https://portfolio-fbm.vercel.app/'>
@@ -51,7 +51,7 @@ const Footer = () => {
                             <span style={{ paddingBottom: '.5rem' }} >Felipe Blanco Muzzolón</span>
                         </a>
                     </div>
-                </div>
+                </div> */}
             </div>
             <img src={logo} style={{ maxWidth: '2rem', marginRight: '3rem' }} alt='logo' />
         </footer>

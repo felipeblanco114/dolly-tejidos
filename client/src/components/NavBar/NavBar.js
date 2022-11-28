@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.css';
 import logo from './oveja.png';
 import { Link, useHistory } from 'react-router-dom';

@@ -4,7 +4,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-const Card = ({ images, id, title, category, description, price, talle, alto, ancho, stock, cart, addToCart }) => {
+const Card = ({ images, id, title, category, description, price, talle, alto, ancho, stock, cart, addToCart, quantity }) => {
 
     const [image, setImage] = useState(0);
 
@@ -49,7 +49,7 @@ const Card = ({ images, id, title, category, description, price, talle, alto, an
                     <div><span>Ancho: </span>{ancho}</div>
                 </div>
             </div>
-            <button onClick={() => addToCart({imageCart, title, price, id })} disabled={!stock}><AddShoppingCartIcon style={{ maxWidth: '1rem', float: 'left', marginLeft: '.5rem' }} /> 
+            <button onClick={() => addToCart({ imageCart, title, price, id, quantity })} disabled={!stock}><AddShoppingCartIcon style={{ maxWidth: '1rem', float: 'left', marginLeft: '.5rem' }} /> 
                 <span>AGREGAR AL CARRITO</span>
             </button>
         </div>
